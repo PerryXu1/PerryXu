@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perry Xu – Engineering Science, University of Toronto</title>
+<meta name="description" content="Perry Xu’s academic page: photonics, quantum optics, and instrumentation at the University of Toronto.">
+<style>
+:root{
+  --bg:#ffffff; --text:#494e52; --heading:#2a2d30; --muted:#7a8288; --border:#f2f3f3;
+  --rule:#d9dcde; --link:#52adc8; --link-hover:#2f7f97; --surface:#f7f8f8;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1b1e21; --text:#c9cfd3; --heading:#f0f2f3; --muted:#8f979d; --border:#2a2e32;
+    --rule:#3a3f44; --link:#6cc3dc; --link-hover:#9bdcee; --surface:#23272a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1b1e21; --text:#c9cfd3; --heading:#f0f2f3; --muted:#8f979d; --border:#2a2e32;
+  --rule:#3a3f44; --link:#6cc3dc; --link-hover:#9bdcee; --surface:#23272a;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover);text-decoration:underline}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--rule);background:var(--bg)}
+.masthead-inner{max-width:1100px;margin:0 auto;padding:0.9rem 1.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem 1.75rem}
+.site-title{font-weight:700;color:var(--heading);font-size:1.05rem}
+.site-title:hover{text-decoration:none;color:var(--link)}
+.nav{display:flex;flex-wrap:wrap;gap:0.25rem 1.4rem;margin-left:auto;list-style:none;padding:0;margin-top:0;margin-bottom:0}
+.nav a{color:var(--text);font-size:0.95rem}
+.nav a:hover{color:var(--link);text-decoration:none}
+.theme-btn{background:none;border:1px solid var(--rule);color:var(--muted);border-radius:6px;padding:0.15rem 0.55rem;font-size:0.85rem;cursor:pointer}
+
+/* layout */
+.page{max-width:1100px;margin:0 auto;padding:2rem 1.25rem 3rem;display:grid;grid-template-columns:230px minmax(0,1fr);gap:3rem}
+.sidebar{position:sticky;top:1.5rem;align-self:start;text-align:left}
+.avatar{width:150px;height:150px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#52adc8,#2f5f8a);color:#fff;font-size:3rem;font-weight:700;letter-spacing:0.05em;margin-bottom:1rem}
+.author-name{margin:0;font-size:1.45rem;color:var(--heading);line-height:1.25}
+.author-bio{margin:0.35rem 0 1rem;color:var(--muted);font-size:0.95rem}
+.links{list-style:none;margin:0;padding:0;font-size:0.95rem}
+.links li{margin:0.35rem 0;display:flex;gap:0.55rem;align-items:baseline}
+.links .ico{width:1.1rem;text-align:center;color:var(--muted)}
+.links a{word-break:break-word}
+
+/* content */
+main section{margin-bottom:2.75rem}
+h1{font-size:1.6rem;color:var(--heading);margin:0 0 1rem;padding-bottom:0.4rem;border-bottom:1px solid var(--rule);line-height:1.3}
+h2{font-size:1.15rem;color:var(--heading);margin:1.6rem 0 0.2rem;line-height:1.35}
+h3{font-size:1rem;color:var(--heading);margin:1.25rem 0 0.1rem}
+p{margin:0.6rem 0}
+.meta{color:var(--muted);font-size:0.9rem;margin:0 0 0.4rem}
+ul.bul{margin:0.4rem 0 0;padding-left:1.25rem}
+ul.bul li{margin:0.4rem 0}
+.entry{padding:0.9rem 0;border-bottom:1px solid var(--border)}
+.entry:last-child{border-bottom:0}
+.entry h2{margin-top:0}
+.tag{display:inline-block;font-size:0.78rem;background:var(--surface);border:1px solid var(--rule);color:var(--muted);border-radius:4px;padding:0 0.4rem;margin:0.1rem 0.2rem 0.1rem 0}
+.skills dt{font-weight:600;color:var(--heading);margin-top:0.8rem}
+.skills dd{margin:0.1rem 0 0}
+footer{border-top:1px solid var(--rule);color:var(--muted);font-size:0.85rem;padding:1.25rem;text-align:center}
+
+@media (max-width:760px){
+  .page{grid-template-columns:1fr;gap:1.5rem}
+  .sidebar{position:static;display:grid;grid-template-columns:auto 1fr;gap:0 1.25rem;align-items:center}
+  .avatar{width:96px;height:96px;font-size:2rem;margin:0;grid-row:1/3}
+  .links{grid-column:1/-1;margin-top:1rem}
+  .nav{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="site-title" href="#about">Perry Xu</a>
+    <ul class="nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle light or dark theme">◐ Theme</button>
+  </div>
+</header>
+
+<div class="page">
+  <aside class="sidebar">
+    <div class="avatar" aria-hidden="true">PX</div>
+    <div>
+      <h3 class="author-name">Perry Xu</h3>
+      <p class="author-bio">Engineering Science student working on photonics, quantum optics, and instrumentation.</p>
+    </div>
+    <ul class="links">
+      <li><span class="ico">⌖</span><span>Toronto, ON</span></li>
+      <li><span class="ico">🎓</span><span>University of Toronto</span></li>
+      <li><span class="ico">✉</span><a href="mailto:perryxu6626@gmail.com">Email</a></li>
+      <li><span class="ico">in</span><a href="https://linkedin.com/in/peilin-xu-194556351">LinkedIn</a></li>
+      <li><span class="ico">⌥</span><a href="https://github.com/PerryXu1">GitHub</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h1>About me</h1>
+      <p>I’m a student in Engineering Science at the University of Toronto (B.A.Sc., 2025–2029), where I work at the boundary of optics, electronics, and software. I like building the whole experiment: the optical setup, the custom PCBs and firmware that drive it, and the simulation and analysis code that makes sense of the data.</p>
+      <p>I’m currently a research intern in the <strong>Li Qian Group</strong> (Nonlinear &amp; Quantum Optics) and a team member at the <strong>University of Toronto Quantum Club</strong>, where I build NV-diamond magnetometry hardware. My projects range from a photonic circuit simulator to a high-dynamic-range optical power meter.</p>
+      <p><strong>Research interests:</strong> nonlinear and quantum optics, fiber photonics, NV-center quantum sensing, precision instrumentation, photonic simulation.</p>
+    </section>
+
+    <section id="research">
+      <h1>Research &amp; experience</h1>
+
+      <div class="entry">
+        <h2>Research Intern, Li Qian Group (Nonlinear &amp; Quantum Optics)</h2>
+        <p class="meta">University of Toronto · March 2026 – present</p>
+        <ul class="bul">
+          <li>Constructed a fiber-based interferometer with electro-optic modulation to measure the optical nonlinearity of a fiber-based nonlinear material, using a piezo phase modulator to account for environmental phase drift.</li>
+          <li>Wrote Python scripts to automate the interferometer setup, preparing and extracting noisy oscilloscope waveform data through SCPI and processing it to characterize the nonlinearity.</li>
+          <li>Designed and built an STM32-based controller PCB for a high-voltage supply with programmable output over time up to 15 kV at 8 V resolution (~0.05% of full scale).</li>
+          <li>Designed and ran charge dynamics and optical simulations to model experimental processes and characterize observed phenomena, automating sweeps and data processing in Python.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h2>Team Member, University of Toronto Quantum Club</h2>
+        <p class="meta">University of Toronto · June 2026 – present</p>
+        <ul class="bul">
+          <li>Built a PCB-scale NV-diamond vector magnetometer using optically initialized, microwave-driven spin qubits read out through laser-induced fluorescence; accepted for presentation at SPIE Photonics West.</li>
+          <li>Designed and simulated a broadband antenna in Ansys HFSS to drive NV ground-state spin transitions, holding S11 below −25 dB across 2.7–3.0 GHz to cover the full ODMR band around the zero-field splitting frequency.</li>
+          <li>Redesigned the board in Altium around the new antenna and a lower-phase-noise RF synthesizer to improve achievable spin coherence, and reworked the optical readout to improve fluorescence collection.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h1>Projects</h1>
+
+      <div class="entry">
+        <h2><a href="https://github.com/PerryXu1/optical-power-meter">Optical Power Meter</a></h2>
+        <p class="meta">February – March 2026 · <span class="tag">Altium</span><span class="tag">LTspice</span><span class="tag">C</span><span class="tag">Python</span></p>
+        <ul class="bul">
+          <li>Engineered a high-precision optical power meter PCB spanning 80 dB of dynamic range, with layout optimized for signal integrity and a low noise floor across a wide range of light intensities and sampling rates.</li>
+          <li>Modeled the analog circuitry in LTspice with real parasitics and ran noise simulations to predict the noise floor under realistic EMI conditions, then set layout and grounding choices against those results.</li>
+          <li>Developed C firmware with an auto-ranging algorithm that switches op amp feedback paths to maximize range and sensitivity, and times sampling to reduce EMI from USB and power traces.</li>
+          <li>Wrote a Python interface for automatic calibration and optical measurement.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h2><a href="https://github.com/PerryXu1/lumen-photonics">Lumen</a></h2>
+        <p class="meta">November 2025 – January 2026 · <span class="tag">Python</span><span class="tag">Numerical modeling</span></p>
+        <ul class="bul">
+          <li>Built a photonic circuit simulator library in Python to model, optimize, and simulate complex photonic circuits, validating experimental setups before physical implementation.</li>
+          <li>Developed an efficient numerical solver that accounts for nonidealities like loss, crosstalk, and phase shifts across interferometers, resonators, beam splitters, and other components.</li>
+          <li>Designed a modular interface for defining custom circuit topologies, running simulations such as wavelength sweeps, and visualizing results in predefined and custom displays.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h2><a href="https://github.com/PerryXu1/chi-2-analyzer">Chi-2 Analyzer</a></h2>
+        <p class="meta"><span class="tag">Python</span><span class="tag">Electro-optics</span></p>
+        <p>A script that analyzes data from an electro-optic phase modulator interferometer setup to calculate the χ<sup>(2)</sup> of a periodically poled silica fibre.</p>
+      </div>
+
+      <div class="entry">
+        <h2><a href="https://github.com/PerryXu1/auto-threader">Auto-Threader</a></h2>
+        <p class="meta"><span class="tag">JavaScript</span><span class="tag">Mechatronics</span></p>
+        <p>A device that precisely and automatically threads thin iron electrode wire through the air hole of a twin-hole fibre using motorized mechanical movement.</p>
+      </div>
+
+      <div class="entry">
+        <h2><a href="https://github.com/PerryXu1/robotic-arm">Robotic Arm</a></h2>
+        <p class="meta"><span class="tag">C++</span><span class="tag">3D printing</span></p>
+        <p>A 3D-printed, compact 5-DOF robotic arm.</p>
+      </div>
+
+      <p>More on <a href="https://github.com/PerryXu1?tab=repositories">GitHub</a>.</p>
+    </section>
+
+    <section id="cv">
+      <h1>CV</h1>
+
+      <h2>Education</h2>
+      <ul class="bul">
+        <li><strong>University of Toronto</strong>, Toronto, ON — B.A.Sc. in Engineering Science, Sept. 2025 – May 2029. cGPA: 3.92/4.00</li>
+      </ul>
+
+      <h2>Technical skills</h2>
+      <dl class="skills">
+        <dt>Optics &amp; photonics</dt>
+        <dd>Interferometers, optical spectrum analyzers, optical fiber, free-space and fiber alignment, electro-optic and phase modulation, polarization control (polarimeters, controllers), photodetection, lasers</dd>
+        <dt>Instrumentation</dt>
+        <dd>Oscilloscopes, LabVIEW, function generators, RF spectrum analyzers, high-voltage supplies</dd>
+        <dt>Programming</dt>
+        <dd>Python (NumPy, SciPy, Pandas, PyVISA), MATLAB, C/C++, Qiskit, SCPI, Java</dd>
+        <dt>Simulation &amp; design</dt>
+        <dd>COMSOL Multiphysics, Ansys Lumerical, Ansys HFSS, Altium Designer, LTspice</dd>
+      </dl>
+
+      <h2>Achievements</h2>
+      <ul class="bul">
+        <li><strong>3rd Place</strong>, IBM Qiskit Fall Fest Hackathon 2025</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer>© 2026 Perry Xu</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('themeBtn'),root=document.documentElement;
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
